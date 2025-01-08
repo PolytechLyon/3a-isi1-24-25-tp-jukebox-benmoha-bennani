@@ -1,8 +1,8 @@
 # Compte Rendu TP Jukebox
 
 ## Binôme
-- Nom Prénom
-- Nom Prénom
+- Ben Moha Abderrahim
+- Bennani Ilyass
 
 ## Choix de conception et de réalisation
 
