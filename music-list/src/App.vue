@@ -213,6 +213,7 @@ export default {
       this.currentPlaylistIndex = index;
       this.currentTrackIndex = -1;
       this.isPlaying = false;
+      this.showPlaylistManager = false; // Hide the playlist manager and show the main player view
     }
   },
   mounted() {
@@ -246,69 +247,84 @@ export default {
 
 <style scoped>
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
   color: #333;
   margin: 0;
   padding: 0;
 }
 
 .jukebox {
-  max-width: 600px;
-  margin: 20px auto;
+  max-width: 800px;
+  margin: 40px auto;
   background: #fff;
-  padding: 20px;
+  padding: 30px;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1,
 h2 {
-  text-align: left;
-  margin: 10px 0;
+  text-align: center;
+  margin: 20px 0;
   font-weight: bold;
-  color: #222;
+  color: #333;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 fieldset {
   border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
-  margin-bottom: 15px;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
 }
 
 legend {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   color: #555;
 }
 
 label {
   display: inline-block;
-  margin-right: 15px;
-  font-size: 14px;
+  margin-right: 20px;
+  font-size: 16px;
   cursor: pointer;
 }
 
 input[type="radio"] {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 10px;
   border: 1px solid #ddd;
-  margin: 5px 0;
-  border-radius: 4px;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 li.playing {
@@ -320,6 +336,10 @@ li.invalid {
   text-decoration: line-through;
 }
 
+li:hover {
+  background-color: #f9f9f9;
+}
+
 .buttons button {
   margin-left: 10px;
 }
@@ -327,7 +347,7 @@ li.invalid {
 form {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
@@ -335,19 +355,9 @@ select,
 input[type="text"],
 input[type="file"],
 button {
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
+  border-radius: 5px;
 }
 
 input[type="range"] {
